@@ -1,4 +1,6 @@
 class Book < Storage
+  attr_reader :id
+
   def initialize(data = {})
     @author, @title, @id =
         data['author'] || '', data['title'] || '', data['id'] || new_id
