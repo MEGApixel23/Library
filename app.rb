@@ -9,7 +9,7 @@ require ROOT + '/classes/Order.rb'
 require ROOT + '/classes/Library.rb'
 
 #reader = Reader.get_by_id 1
-book = Book.get_by_id 1
+#book = Book.get_by_id 1
 
 #order = Order.new({'book' => book, 'reader' => reader})
 #order.save

@@ -61,14 +61,20 @@ class Library < Storage
 
         if (val.instance_of? Array)
           val.each do |id|
-            result[key][id] = Book.get_by_id id
+            if (key === 'books')
+              result[key][id] = Book.get_by_id id
+            elsif (key === 'authors')
+              result[key][id] = Author.get_by_id id
+            elsif (key === 'orders')
+              result[key][id] = Order.get_by_id id
+            elsif (key === 'readers')
+              result[key][id] = Reader.get_by_id id
+            end
           end
         end
       end
     end
 
-    puts result
-
-    self.new data
+    self.new result
   end
 end
