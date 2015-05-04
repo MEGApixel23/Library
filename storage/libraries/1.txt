@@ -1,1 +1,1 @@
-{"books":[1],"orders":[],"readers":[],"authors":[],"id":1}
+{"authors":[7],"readers":[4],"orders":[],"books":[5],"id":1}

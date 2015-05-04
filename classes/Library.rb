@@ -77,4 +77,11 @@ class Library < Storage
 
     self.new result
   end
+
+  def who_often_takes_book(book)
+    result = {}
+    @orders.each do |key, val|
+      result[val.reader.id] = 1
+    end
+  end
 end

@@ -1,10 +1,10 @@
 class Order < Storage
+  attr_reader :id, :book, :reader, :date
+
   def initialize(data = {})
     @book, @reader, @date = data['book'] || '', data['reader'] || '',
         data['date'] || ''
     @id = data['id'] || new_id
-
-    puts @reader.id
   end
 
   def self.path_to_storage

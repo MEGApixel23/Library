@@ -7,16 +7,20 @@ require ROOT + '/classes/Book.rb'
 require ROOT + '/classes/Reader.rb'
 require ROOT + '/classes/Order.rb'
 require ROOT + '/classes/Library.rb'
+=begin
+author = Author.new({'author' => 'Author', 'bio' => 'Bio'})
+author.save
 
-#reader = Reader.get_by_id 1
-#book = Book.get_by_id 1
+book = Book.new({'title' => 'Title', 'author' => author})
+book.save
 
-#order = Order.new({'book' => book, 'reader' => reader})
-#order.save
+reader = Reader.new({'name' => 'Name'})
+reader.save
 
-#library = Library.new
-#library << book
-#library.save
+order = Order.new({'book' => book, 'reader' => reader})
+order.save
 
-library = Library.get_by_id 1
-print library.inspect
+puts order.inspect
+=end
+library = Library.get_by_id 3
+library.who_often_takes_book 1
