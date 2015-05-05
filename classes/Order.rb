@@ -20,7 +20,6 @@ class Order < Storage
   end
 
   def reader
-    puts @reader
     if @reader.class == Reader
       @reader
     else

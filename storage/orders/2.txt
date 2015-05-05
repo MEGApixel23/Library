@@ -1,1 +1,1 @@
-{"date":"","reader":3,"book":4,"id":2}
+{"date":"","reader":2,"book":3,"id":2}

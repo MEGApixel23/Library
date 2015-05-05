@@ -1,5 +1,5 @@
 class Library < Storage
-  attr_reader :books, :orders, :readers, :authors
+  attr_reader :books, :orders, :readers, :authors, :id
 
   def initialize(data = {})
     @books, @orders, @readers, @authors =
@@ -73,6 +73,8 @@ class Library < Storage
           end
         end
       end
+
+      result['id'] = id
     end
 
     self.new result
@@ -81,7 +83,15 @@ class Library < Storage
   def who_often_takes_book(book)
     result = {}
     @orders.each do |key, val|
-      result[val.reader.id] = 1
+      if (val.book.id == book)
+        if result.has_key?(val.reader.id)
+          result[val.reader.id] += 1
+        else
+          result[val.reader.id] = 1
+        end
+      end
     end
+
+    Reader.get_by_id result.values.max
   end
 end
