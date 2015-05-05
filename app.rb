@@ -34,7 +34,12 @@ library << reader
 library.save
 =end
 
+=begin
 library = Library.get_by_id 2
 library << (Order.get_by_id 2)
 library.save
 print library.who_often_takes_book 3
+=end
+
+library = Library.get_by_id 2
+puts library.most_popular_book

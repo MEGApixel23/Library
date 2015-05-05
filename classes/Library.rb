@@ -94,4 +94,17 @@ class Library < Storage
 
     Reader.get_by_id result.values.max
   end
+
+  def most_popular_book
+    result = {}
+    @orders.each do |key, val|
+      if result.has_key?(val.book.id)
+        result[val.book.id] += 1
+      else
+        result[val.book.id] = 1
+      end
+    end
+
+    Book.get_by_id result.values.max
+  end
 end
