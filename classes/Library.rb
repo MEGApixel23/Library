@@ -92,7 +92,7 @@ class Library < Storage
       end
     end
 
-    Reader.get_by_id result.values.max
+    Reader.get_by_id result.max_by{|k,v| k}
   end
 
   def most_popular_book
@@ -105,6 +105,24 @@ class Library < Storage
       end
     end
 
-    Book.get_by_id result.values.max
+    Book.get_by_id result.max_by{|k,v| k}
+  end
+
+  def most_popular_books_readers(books_quantity = 3)
+    result = {}
+    @orders.each do |key, val|
+      if result.has_key?(val.book.id)
+        result[val.book.id] += 1
+      else
+        result[val.book.id] = 1
+      end
+    end
+
+    readers = []
+    result.keys.sort[0..(books_quantity-1)].each do |obj|
+      readers << Reader.get_by_id(obj)
+    end
+
+    readers
   end
 end

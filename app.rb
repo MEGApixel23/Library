@@ -39,7 +39,15 @@ library = Library.get_by_id 2
 library << (Order.get_by_id 2)
 library.save
 print library.who_often_takes_book 3
+print library.most_popular_book
 =end
 
+=begin
 library = Library.get_by_id 2
-puts library.most_popular_book
+print library.who_often_takes_book 3
+=end
+
+=begin
+library = Library.get_by_id 2
+print library.most_popular_books_readers
+=end
