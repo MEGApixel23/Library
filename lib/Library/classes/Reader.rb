@@ -9,7 +9,7 @@ module Library
     end
 
     def self.path_to_storage
-      return ROOT + '/storage/readers'
+      return ROOT + '/Library/storage/readers'
     end
 
     def save

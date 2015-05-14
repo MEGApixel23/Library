@@ -24,7 +24,7 @@ module Library
     end
 
     def self.path_to_storage
-      return ROOT + '/storage/libraries'
+      return ROOT + '/Library/storage/libraries'
     end
 
     def save

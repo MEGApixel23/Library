@@ -9,7 +9,7 @@ module Library
     end
 
     def self.path_to_storage
-      return ROOT + '/storage/orders'
+      return ROOT + '/Library/storage/orders'
     end
 
     def book

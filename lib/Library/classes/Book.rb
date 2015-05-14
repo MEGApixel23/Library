@@ -8,7 +8,7 @@ module Library
     end
 
     def self.path_to_storage
-      return ROOT + '/storage/books'
+      return ROOT + '/Library/storage/books'
     end
 
     def author

@@ -22,7 +22,7 @@ module Library
     end
 
     def self.path_to_storage
-      return ROOT + '/storage/authors'
+      return ROOT + '/Library/storage/authors'
     end
   end
 end
