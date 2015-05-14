@@ -1,16 +1,18 @@
+require_relative "Library/version"
+
 ROOT = Dir.pwd
 
 require 'json'
-require ROOT + '/classes/Storage.rb'
-require ROOT + '/classes/Author.rb'
-require ROOT + '/classes/Book.rb'
-require ROOT + '/classes/Reader.rb'
-require ROOT + '/classes/Order.rb'
-require ROOT + '/classes/Library.rb'
+require_relative "Library/classes/Storage"
+require_relative "Library/classes/Author"
+require_relative "Library/classes/Book"
+require_relative "Library/classes/Reader"
+require_relative "Library/classes/Order"
+require_relative "Library/classes/Library"
 
-=begin
-author = Author.new({'author' => 'Author', 'bio' => 'Bio'})
+author = Library::Author.new({'author' => 'Author', 'bio' => 'Bio'})
 author.save
+=begin
 book = Book.new({'title' => 'Title', 'author' => author})
 book.save
 reader = Reader.new({'name' => 'Name'})
